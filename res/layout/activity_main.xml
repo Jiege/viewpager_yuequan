@@ -1,0 +1,60 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity" >
+    <!-- ViewPager的使用必须是完整的名字哦 -->
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"/>
+   
+    <!-- 下面的线性布局是三个tab放置的区域 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#000000">
+        <!-- 使用include标签，可以直接重用xml，这是我在《Android UI 基础教程》中发现的~\(^o^)/~ -->
+        <include
+            android:id="@+id/tab1"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            layout="@layout/tab_topic"/>
+        <include
+            android:id="@+id/tab2"
+            android:layout_weight="1"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            layout="@layout/tab_news"/>
+        <include
+            android:id="@+id/tab3"
+            android:layout_weight="1"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            layout="@layout/tab_quan"/>
+        <include
+            android:id="@+id/tab4"
+            android:layout_weight="1"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            layout="@layout/tab_chat"/>
+        <include
+            android:id="@+id/tab5"
+            android:layout_weight="1"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            layout="@layout/tab_contact"/>
+    </LinearLayout>
+     <!-- 这是所谓的激活条，为了方便，也直接使用启动图标的图片了 -->
+    <ImageView
+        android:id="@+id/active_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="matrix"
+        android:src="@drawable/bar"
+        android:background="#000000"/>
+</LinearLayout>
